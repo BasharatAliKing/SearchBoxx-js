@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Contacts</title>
+</head>
+<style>
+    *{
+        padding: 0px;
+        margin: 0px;
+    }
+    h1{
+        text-align: center;
+        font-size: 40px;
+    }
+    .container{
+        border:  2px solid black;
+        margin: 20px 40px;
+        margin-top: 0px;
+    }
+    h2{
+     padding-left: 20px;
+        border-bottom: 1px solid black;
+    }
+    .container ul li  {
+        border-bottom: 1px solid black;
+        display: flex;
+       
+    }
+    .container ul li a{
+        color: black;
+        text-decoration: none;
+        padding-left: 30px ;
+    }
+    #input{
+        margin-bottom: 0px;
+        margin-left: 40px;
+        padding: 5px 8px;
+    }
+</style>
+<body>
+    <h1> My contacts</h1>
+    <input type="text" id="input" placeholder="Search here....">
+    <div class="container">
+       
+        <ul id="names"> 
+           <li class="header"><h2>A</h2></li> 
+
+            <li class="all-name"><a href="#">amma</a></li>
+            <li class="all-name"><a href="#">amna</a></li>
+            <li class="all-name"><a href="#">ayesha</a></li>
+            <li class="all-name"><a href="#">asma</a></li>
+            <li class="all-name"><a href="#">aqsa</a></li>
+            <li class="all-name"><a href="#">aba</a></li>
+       
+
+            <li class="header"><h2>B</h2></li>
+       
+            <li class="all-name"><a href="#">Basharat</a></li>
+            <li class="all-name"><a href="#">bushra</a></li>
+            <li class="all-name"><a href="#">bisma</a></li>
+            <li class="all-name"><a href="#">badsha</a></li>
+            <li class="all-name"><a href="#">bano</a></li>
+            <li class="all-name"><a href="#">bat</a></li>
+
+            <li class="header"><h2>C</h2></li>
+
+            <li class="all-name"><a href="#">cat</a></li>
+            <li class="all-name"><a href="#">come</a></li>
+            <li class="all-name"><a href="#">cmme</a></li>
+            <li class="all-name"><a href="#">cute</a></li>
+            <li class="all-name"><a href="#">cat lady</a></li>
+            <li class="all-name"><a href="#">charles</a></li>
+        </ul>
+    </div>
+ <script>
+     var input=document.getElementById('input');
+
+     input.addEventListener('keyup', searchbox);
+
+     function searchbox(){
+        var input=document.getElementById('input').value.toUpperCase();
+        
+        // get ul 
+        var ul=document.getElementById('names');
+        // get li
+        var li=ul.querySelectorAll('li.all-name');
+        for(var i=0; i<li.length; i++){
+            var a = li[i].getElementsByTagName('a')[0];
+            if(a.innerHTML.toUpperCase().indexOf(input) > -1){
+                    li[i].style.display='';
+            }
+            else{
+                li[i].style.display='none';
+            }
+        }
+     }
+ </script>
+    
+</body>
+</html>
